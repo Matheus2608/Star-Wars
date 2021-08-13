@@ -1,0 +1,62 @@
+This is the way!!!
+
+Contextualization
+
+Mando doesn't have a lot of time available. In addition to running away from the troops of the Galactic Empire, doing good and looking for information on the whereabouts of a 
+Jedi Knight, he needs to take care of Grogu! Therefore, it is urgent to maximize the use of your available time, reduced as missions with the highest Beskar return possible.
+Your mission will be to help with two specific tasks. The first is to decode the list of available quests. The second is to select the subset of quests that maximize Beskar's 
+acquisition (maximize his financial return), given the amount of time Mando has available.
+In your first challenge, you will decode the contents of the Guild's Annotated List. As it is sensitive content, Greef Karga uses a type of encryption to try to scramble the 
+contents of the list before transmitting.
+Rest assured that Kuiil has gone ahead and implemented the entire reception part of the interplanetary transmission. He also implemented a Deque-like structure for you to use 
+to implement the decryption algorithm.
+You even protested that it was not necessary to use Deque to solve this part of the problem. However, irreducible Kuiil said:
+After that, there's no way. If even Mando wasn't able to make him change his mind in The Reckoning episode, you won't be able to. In other words, it is mandatory to use the
+Deque-type structure.
+
+Decipherment Algorithm
+
+The algorithm used by the Guild is quite simple. It consists of performing an offset of X fixed positions on top of a pre-defined alphabet. Note that both the alphabet and the 
+X amount of shift positions(key) are parameters of the solution to be implemented.The transformation can be represented by aligning two alphabets; the cipher alphabet is the 
+normal alphabet rotated to the right by a number of positions (key). For example, below is a cipher using a three-position right rotation (the switch parameter, three in this 
+case, is used as the key).
+
+Normal: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ' (text without quotes. Contains a space at the end)
+Encrypted: DEFGHIJKLMNOPQRSTUVWXYZABC
+
+In the example above, the letter B will be encrypted using the letter E.
+To encrypt a message, observe each letter of the message in the "Normal" line and write the corresponding letter in the "Encrypted" line. To decipher, you must do the opposite.
+
+Normal: THIS IS THE WAY
+Encrypted: WKLVCLVCWKHCZDA
+
+The above example can be obtained using the dictionary 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ' (without quotes) and using the right value 3 key (offset). The original value is taken from
+the same dictionary and using the same key, however with a left shift. Note that the character "space" is part of this alphabet!
+
+The Problem of Maximizing Command Gains
+Once in possession of the list of available quests to be done, Mando needs to select a subset of quests whose sum of time needed to complete them does not exceed the amount of 
+available time he has and whose reward is the greatest possible. Putting it more formally, we have:
+
+Given a set I={1,2,3,...,N} of quests, each i ∈ I quest has a time duration of Wi hours and an associated reward value of Vi grams of Beskar. Given an Available Time Window of 
+Whours, select a subset S ∈ I of missions, such that Mando get maximum Beskar.Being a good friend, Kuiil identified that the problem described fits the Intergalactic problem 
+known as: The Full or Binary Backpack Problem. He also found that there are several ways to solve this problem. However, be careful. Not every solution returns the maximum value!
+These known solutions have different computational complexity. 
+You will help Mando in both missions. The first is to decode the list of available quests. The second is to select the subset of quests that maximize the return in Beskar
+
+Input
+The input is made up of several lines. The first line has an integer W (0≤W≤1000) that indicates the amount of hours Mando has available to participate in the missions.
+The next line has an integer M, which can only assume the values ​​0 or 1. The value 1 indicates that the missions belonging to the solution set S must be presented,
+as described in the Output section. The value 0 indicates that they should not be presented. The next line has an integer O (0≤O≤3), which represents the index of the column where
+the sequence must be started for the application of the ascending ordering algorithm (ascending ordering following multiple column criteria), namely:
+O = 0 -- Start sorting the answer by the column representing the mission name, followed by duration, value, and difficulty level (0, 1, 2, 3);
+O = 1 -- Start sorting the answer by the column representing the duration of the mission, followed by name, value and difficulty level (1, 0, 2, 3);
+O = 2 -- Start sorting the answer by the column that represents the mission value, followed by name, duration and difficulty level (2, 0, 1, 3);
+O = 3 -- Start sorting the answer by the column representing the mission's difficulty level, followed by name, duration, and value (3, 0, 1, 2);
+The next line has a string value A (0<len(A)≤149), which represents the alphabet used by the cipher function and should be used in the decipher() function. It is ensured that there are no duplicate characters in the alphabet entered. The next line has an integer value C (0≤ C) that indicates the number of offset positions to be applied in the decryption algorithm (key). The next line has an integer value N (0≤N≤50) that indicates the number of encrypted missions that will be reported. Next, the next N lines each have a string i that represents an encrypted mission. The content of string i is enclosed in square brackets "[ciphertext]". It is important to note that square brackets are only delimiters and are not part of the content to be deciphered.
+After decoding the ciphertext, each mission i is formed by the following parameters separated by a comma.
+Quest Name, Duration, Value, Difficulty Level
+
+Output
+The output is formed by multiple lines. The solution set must be presented. The missions belonging to the solution set S must be presented one per line and be ordered according to the input parameter O, if the input parameter of M is M==1. Then, the time available for Mando after discounting the Wi times referring to the missions that are part of the solution set S must be presented. Finally, the value in Beskar that will be obtained by Mando when performing the selected missions in the solution set must be presented. S.
+It is important to highlight that the input parameter M concerns only the presentation of the missions belonging to the solution set S. The other output values ​​must be presented regardless of the value of M.
+The format in which this information must be entered is defined in the example test cases below.
