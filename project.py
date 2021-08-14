@@ -1,3 +1,4 @@
+from operator import itemgetter
 class Deque:
     def __init__(self):
         self.__items = []
@@ -26,7 +27,6 @@ class Deque:
             sdeque += i
         return sdeque
 
-from operator import itemgetter
 ''' First Task - Mission List Decoding '''
 def add_alphabet(deque, alphabet):
     for letter in alphabet:
@@ -102,8 +102,7 @@ def ordering(lista,order):
     return new_list        
 
     
-def selecionar_subconjunto_missoes():
-    #insira seu código aqui
+def select_missions():
     d = Deque()
     hours = int(input())
     permission = int(input())
