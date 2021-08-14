@@ -1,0 +1,17 @@
+select_missions()
+50
+0
+2
+ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789,;:'()_
+19
+10
+[l0xsZ07;:s7ys t,,x60t4MDEMDEJMxt;A]
+[l0xs 7';xs7ysU4tv3st6wso01:xMDIMEJDMxt;A]
+[nt4t,se7,z0'41;MIMDHDM0t,w]
+[V0t8:x,sDHOsl0xsUx41x(x,MEGMGJM0t,w]
+[o16:x,s1;sV7516zMFCMHLMxt;A]
+[Y1,;:s7ys 1;sft5xMEFMEFFMxt;A]
+[TsZ74wx6sV,7)6MEFMJLM5xw1'5]
+[l0xsc16z;,7twMEJMIDMxt;A]
+[l0xsjxwso75t6MEDMFFDMxt;A]
+[c1;;xwsuAsY1,xMEKMDJLMxt;A]
