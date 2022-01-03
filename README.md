@@ -1,6 +1,6 @@
 # Star-Wars
 <p align="center">
-    <img src="https://i.pinimg.com/originals/62/ef/e5/62efe5f69dd44434d90dc402e6212545.jpg" alt="Autoplay" width="150px"/>
+    <img src="https://i.pinimg.com/originals/62/ef/e5/62efe5f69dd44434d90dc402e6212545.jpg" alt="Autoplay" width="350px"/>
 </p>
 This project is my solution to my univeristy project of Data Structure.
 
