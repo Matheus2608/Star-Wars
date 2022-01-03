@@ -157,3 +157,6 @@ def select_missions():
         print(f'value: {final_value}')
 
     return None
+
+if __name__ == "__main__":
+    select_missions()
